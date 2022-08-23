@@ -7,11 +7,12 @@ h1, h2{
 }
 
 .hero {
-background: url(../img/index.jpg) no-repeat;
+background: url(../M2U3/img/fondo.jpg) no-repeat;
 background-size: cover;
-height: 40vh;
-min-height: 100px;
-color: rgb(24, 88, 24);
+height: 50vh;
+min-height: 600px;
+color: coral;
+max-width: fit-content;
 }
 
 
@@ -36,29 +37,4 @@ color: rgb(24, 88, 24);
 .lista-novedades li a:hover { 
     color: #212529;
     background-color: #212529 ;
-}
-
-
-/*NOVEDADES*/
-.lista-novedades{
-    margin: 0;
-    padding: 0;
-list-style: none;
-}
-
-.lista-novedades li{
-margin: 4px 0;
-}
-.lista-novedades li a {
-    background-color: rgb(141, 134, 126);
-    font-family: 'Times New Roman', Times, serif;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: rgb(4, 5, 5);
-    transition: all .2s ease-in-out;
-    display: block;
-}
-.lista-novedades li a:hover{
-    color: #212529;
-    background-color: #dadada;
 }
