@@ -1,0 +1,31 @@
+STYLE
+
+
+
+
+footer{
+    background-color:#D29026;
+}
+
+h1, h2, h3{
+    font-family:'Alfa Slab One', cursive;
+    color: #0B3954;
+}
+
+.hero {
+background: url(../images/martillo.jpg);
+background-size: cover;
+height: 200px
+width: 200px
+color: rgb(206, 235, 207);
+
+}
+
+
+.lista-servicios{
+    margin: 0;
+    padding: 0;
+    list-style: armenian;
+    background-color: #0B3954;
+
+}
