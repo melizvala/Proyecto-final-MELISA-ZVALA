@@ -69,11 +69,10 @@ app.post('/ingresar', function (req, res) {
 });
 
 
-app.get('/salir', function (req,res) {
+app.get('/salir', function (req, res) {
   req.session.destroy();
-  res.redirect('/')
-}
-);
+  res.redirect('/');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
