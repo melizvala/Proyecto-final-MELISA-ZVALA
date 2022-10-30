@@ -1,9 +1,9 @@
 var pool = require("./bd");
 
 async function getNovedades() {
-    var query = "select * from novedades order by id desc";
+    var query = "select * from novedades";
     var rows = await pool.query(query);
-    return rows
+    return rows;
 }
 
 async function deleteNovedadById(id) {

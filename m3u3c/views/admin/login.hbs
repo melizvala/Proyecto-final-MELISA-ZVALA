@@ -1,7 +1,7 @@
 <<div class="container">
     <div class="row" style="margin:200px 0">
         <div class="col">
-            <form action="/admin/login" method="post">
+            <form action="/routes/admin/login.js" method="post">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Usuario" name="usuario">
              </div>
@@ -12,7 +12,7 @@
              </form>
 
              {{#if error}}
-             <p>usuorio o contraseña incorrecto</p>
+             <p>usuario o contraseña incorrecto</p>
              {{/if}}
 
         </div>
