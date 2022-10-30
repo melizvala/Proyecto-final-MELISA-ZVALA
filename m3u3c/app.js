@@ -6,6 +6,11 @@ var logger = require('morgan');
 
 
 require('dotenv').config();
+var session = require('express-session');
+
+var pool = require('./models/bd');
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/admin/login');
@@ -24,10 +29,37 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: "81dc9bdb52d04dc20036dbd8313ed055",
+  resave: false,
+  saveUninitialized: true
+  }))
+
+secured = async (req, res, next) => {
+  try {
+    console.log(req.session.id_usuario); 
+    if (req.session.id_usuario) {
+      next("/admin/novedades");
+    } else {
+      res.redirect("/admin/login")
+    }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use ('/admin/login', loginRouter);
-app.use('/admin/novedades', adminRouter);
+app.use('/admin/novedades', secured, adminRouter);
+
+
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,8 +1,4 @@
 
-
-
-  <div class="container-fluid"></div>
-
   <div class="container-fluid">
     <div id="home" class="row aling-items-center hero">
       <div class="col-lg-3 offset-lg-2">
@@ -16,8 +12,8 @@
   </div>
 <!--FIN DE LA PORTADA-->
 
-  <div class="row my-3">
-    <div id="servicios" class="col-md-5 offset-md-2">
+  <div  id="servicios"class="row my-3">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
       <h2>Servicios</h2>
       <ul class="lista-servicios">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -49,8 +45,9 @@
 
 
   <!--Inicio nosotros-->
-  
-        <h2 class="nos">Nosotros</h2>
+   <div class="container-fluid">
+    <div id="nosotros" class="row aling-items-center">
+        <h2>Nosotros</h2>
         <h3>Perfil de la firma:</h3>
         <p class="histfirm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dignissimos, delectus
           voluptatem consequatur ducimus maxime consequuntur numquam, ipsa distinctio molestiae ex qui officiis!
@@ -67,9 +64,10 @@
         <!--Profe aca el historia me quedo por debado de la ultima imagen y no pude moverlo, no se como hacerlo-->
       </div>
     </div>
+    
     <!--fin nosotros-->
 
-    <div>
+  
       <!--inicio profesionales-->
       <div class="row row-cols-1 row-cols-md-4 g-4" id="profesionales">
         <div class="col">
@@ -107,9 +105,9 @@
       <!--final profesionales-->
 
 
-      <div id="conocenos" class="row py-4">
-        <!--inicio visitanos-->
-        <div class="col-md-4 offset-md-2">
+      <div 
+        
+        <div id="visitanos" class="row py-4" class="col-md-4 offset-md-2">
           <h2>Visitanos</h2>
           <div class="mapa">
             <iframe
@@ -121,23 +119,25 @@
         </div>
       </div>
 
-<form action="/contacto" method="post" class="formulario">
-<p>
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre">
-</p>
-<p>
-    <label for="email">Email</label>
-    <input type="text" name="email">
-</p>
-<p>
-    <label for="telefono">Telefono</label>
-    <input type="text" name="tel">
-    <p>
-    <label for="mensaje">Mensaje</label>
-    <textarea name="mensaje"></textarea>
-</p>
-<p class="acciones"><input type="submit" value="Enviar"/></p>
-</form>
-
-      <!--visitanos fin-->
+<div class="col-md-4 mt-4 mt-sm-0" id="contactanos" class="contactanos" class="container-fluid">
+  <h2>Contactanos</h2>
+  <form action="/" method="post">
+    <div class="form-group col-md-6">
+      <label for="nombre"><p>Usuario</p></label>
+      <input type="text" class="form-control" name="usuario" id="nombre" placeholder="nombre de usuario">
+    </div>
+    <div class="form-group">
+      <label for="email"><p>Email</p></label>
+      <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted"><p>We'll never share your email with anyone else.</p></small>
+    </div>
+    <div class="form-group">
+      <label for="Mensaje"><p>Mensaje</p></label>
+      <textarea class="form-control" name="mensaje" id="mensaje" rows="4"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+  {{#if message}}
+{{message}}
+{{/if}}
+</div>
