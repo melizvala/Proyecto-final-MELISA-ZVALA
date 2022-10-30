@@ -1,10 +1,5 @@
-STYLE
-
-
-
-
-footer{
-    background-color:#D29026;
+.footer{
+    background-color: #0B3954;
 }
 
 h1, h2, h3{
@@ -16,8 +11,7 @@ h1, h2, h3{
 background: url(../images/martillo.jpg);
 background-size: cover;
 height: 200px
-width: 200px
-color: rgb(206, 235, 207);
+color=rgb(206, 235, 207)
 
 }
 
