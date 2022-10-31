@@ -3,10 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-require('dotenv').config();
-var session = require('express-session');
-var pool = require('./models/bd');
 
+require("dotenv").config();
+var session = require("express-session");
+
+var pool = require("./models/bd");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -25,6 +26,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: " 54ff9e9e3a2ec0300d4ce11261f5169f ",
+  resave: false,
+  saveUninitialized: true
+}))
+
 
 secured = async (req, res, next) => {
   try {
