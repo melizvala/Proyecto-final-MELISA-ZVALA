@@ -22,13 +22,13 @@ router.get('./../views/admin/novedades')
 
   router.get("/eliminar/:id", async (req, res, next) => {
     var id = req.params.id;
-    await novedadesModel.deleteNovedadBId(id);
+    await novedadesModel.deleteNovedadById(id);
     res.redirect("/admin/novedades")
   });
 
 
 
-  async function deleteNobedadById(id) {
+  async function deleteNovedadById(id) {
     var query = 'delete from novedades where id = ?';
         var row = await pool.query(query, [id]);
         return rows;
