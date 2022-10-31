@@ -3,6 +3,7 @@ var router = express.Router();
 var nodemailer=require('nodemailer')
 var novedadesModel = require('../models/novedadesModels');
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -15,7 +16,6 @@ router.get('/', async function(req, res, next) {
   novedades = novedades.splice(0,5);
   res.render('index', { novedades });
 });
-
 
 
 router.post("/", async (req, res, next) => {
@@ -35,10 +35,9 @@ var transporter = nodemailer.createTransport({
   port: process.env.SMTP_PORT,
   auth: {
     user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS
-  }
-})
-
+    pass: process.env.SMTP_PASS,
+  },
+}); 
 var info = await transporter.sendMail(obj);
 res.render("index", {
   message: "Mensaje enviado correctamente"

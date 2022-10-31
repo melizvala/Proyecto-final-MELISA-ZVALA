@@ -3,8 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-
 require('dotenv').config();
 var session = require('express-session');
 
@@ -29,15 +27,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({
-  secret: "81dc9bdb52d04dc20036dbd8313ed055",
-  resave: false,
-  saveUninitialized: true
-  }))
-
 secured = async (req, res, next) => {
   try {
-    console.log(req.session.id_usuario); 
+
+    console.log(req.session.id_usuario);
     if (req.session.id_usuario) {
       next("/admin/novedades");
     } else {

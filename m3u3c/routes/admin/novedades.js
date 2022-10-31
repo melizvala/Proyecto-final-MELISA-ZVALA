@@ -18,6 +18,8 @@ router.get('/', async function(req, res, next) {
     });
   });
 
+router.get('./../views/admin/novedades')
+
   router.get("/eliminar/:id", async (req, res, next) => {
     var id = req.params.id;
     await novedadesModel.deleteNovedadBId(id);
