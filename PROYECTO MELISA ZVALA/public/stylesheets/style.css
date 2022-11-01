@@ -1,0 +1,53 @@
+.footer{
+    background-color: #0B3954;
+}
+
+h1, h2, h3{
+    font-family:'Alfa Slab One', cursive;
+    color: #0B3954;
+}
+
+.hero {
+background: url(../images/martillo.jpg);
+background-size: cover;
+height: 200px
+color=rgb(206, 235, 207)
+
+}
+
+
+.lista-servicios{
+    margin: 0;
+    padding: 0;
+    list-style: armenian;
+    background-color: #0B3954;
+
+}
+
+.lista-novedades {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    right: -150px;
+
+}
+
+
+
+.lista-novedades li {
+    margin: 4px 0;
+}
+.lista-novedades li a {
+    background-color: white;
+    font-family: "Alfa Slab One", cursive;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #EEEEEE;
+    transition: all .2s ease-in-out;
+    display: block; 
+}
+.lista-novedades li a:hover {
+    color: #212529;
+    background-color: #dadada;
+}
